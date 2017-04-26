@@ -4,7 +4,7 @@
 
 ## Usage:
 this is part of my application that explain how to use this middleware
-* main.go
+* config.go
 ```golang
 ...
 // Load reads the configuration file
@@ -23,7 +23,10 @@ func Load(configFile string) (*Info, error) {
 
 	return conf, err
 }
-
+```
+main.go
+```golang
+...
 func main() {
     	// Load the configuration file
     	conf, err := config.Load("config.yml")
