@@ -159,3 +159,5 @@ Server:
 ## TODO:
 - [ ] add json config support
 - [ ] rewrite readme guide how to use this package (I know that is maybe not simple to understand but see also source code that can better explain what this package do)
+- [ ] add tests
+
