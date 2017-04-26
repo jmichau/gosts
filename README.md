@@ -24,7 +24,7 @@ func Load(configFile string) (*Info, error) {
 	return conf, err
 }
 ```
-main.go
+* main.go
 ```golang
 ...
 func main() {
