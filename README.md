@@ -1,4 +1,4 @@
-# hsts provide middleware for support Strict-Transport-Security header.
+# go-hsts provide middleware for support Strict-Transport-Security header.
 ## Install:
 `go get github.com/mj420/go-hsts`
 
