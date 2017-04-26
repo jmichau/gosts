@@ -5,7 +5,7 @@
 ## Usage:
 this is part of my application that explain how to use this middleware
 * main.go
-```
+```golang
 ...
 // Load reads the configuration file
 func Load(configFile string) (*Info, error) {
@@ -41,7 +41,7 @@ func main() {
 ```
 
 * server.go
-```
+```golang
 ...
 // Run starts the HTTP and/or HTTPS listener and wait for shutdown signal.
 // Finally gracefully stop listeners
@@ -107,7 +107,7 @@ func (i *Info) Run(handlers http.Handler) error {
 ```
 
 * config.yml:
-```
+```yaml
 ...
 
 Server:
