@@ -1,7 +1,7 @@
-# go-hsts
+# gosts
 Package for provide middleware for support Strict-Transport-Security header.
 ## Install:
-`go get github.com/mj420/go-hsts`
+`go get github.com/mj420/gosts`
 
 ## Usage:
 ```golang
@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/mj420/go-hsts"
+	"github.com/mj420/gosts"
 	"github.com/pressly/chi"
 )
 
@@ -22,7 +22,7 @@ import (
 
 func main() {
 	// config for hsts middleware
-	hstsConf := &go_hsts.Info{
+	hstsConf := &gosts.Info{
 		MaxAge:               60 * 60 * 24,
 		Expires:              time.Now().Add(24 * time.Hour),
 		IncludeSubDomains:    true,
@@ -32,8 +32,8 @@ func main() {
 	r := chi.NewRouter()
 
 	// middleware
-	go_hsts.Configure(hstsConf)
-	r.Use(go_hsts.Header)
+	gosts.Configure(hstsConf)
+	r.Use(gosts.Header)
 
 	r.Get("/", helloHandlerGET)
 	// start listener
