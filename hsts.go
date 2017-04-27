@@ -41,19 +41,13 @@ type Info struct {
 	SendPreloadDirective bool `yaml:"SendPreloadDirective"`
 }
 
-// Validate the Info
-func (i *Info) Validate() error {
+// Configure HSTS middleware
+func Configure(i *Info) error {
+	// Validate
 	if i.MaxAge < 0 {
 		return errors.New("HSTS MaxAge duration can't be less than zero.")
 	}
 
-	return nil
-}
-
-// Header is http middleware that adds RFC 6797 Strict-Transport-Security header.
-// Note that this header is ignored by browsers on not-secure response
-// e.g. when connection is over HTTP protocol or SSL certificate is self-signed.
-func Header(h http.Handler, i Info) http.Handler {
 	if i.IncludeSubDomains {
 		headerPieceValue += "; includeSubDomains"
 	}
@@ -64,7 +58,15 @@ func Header(h http.Handler, i Info) http.Handler {
 	expires = i.Expires
 	maxAge = i.MaxAge
 
-	if i.Expires.Sub(time.Now()) > 0*time.Second {
+	return nil
+}
+
+// Header is http middleware that adds RFC 6797 Strict-Transport-Security header.
+// Note that this header is ignored by browsers on not-secure response
+// e.g. when connection is over HTTP protocol or SSL certificate is self-signed.
+func Header(h http.Handler) http.Handler {
+
+	if expires.Sub(time.Now()) > 0*time.Second {
 		// Expires strategy
 
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
