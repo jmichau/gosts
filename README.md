@@ -1,7 +1,7 @@
 # gosts
 Package for provide middleware for support Strict-Transport-Security header.
 ## Install:
-`go get github.com/mj420/gosts`
+`go get github.com/jmichau/gosts`
 
 ## Usage:
 ```golang
