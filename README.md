@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/mj420/gosts"
+	"github.com/mikejav/gosts"
 	"github.com/pressly/chi"
 )
 
