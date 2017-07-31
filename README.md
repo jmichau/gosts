@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/mikejav/gosts)](https://goreportcard.com/report/github.com/mikejav/gosts)
 # gosts
 Package for provide middleware for support Strict-Transport-Security header.
 ## Install:
