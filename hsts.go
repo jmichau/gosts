@@ -1,4 +1,4 @@
-// Package go-hsts provide middleware for support Strict-Transport-Security header.
+// Package gosts provide middleware for support Strict-Transport-Security header.
 // Read more here: https://tools.ietf.org/html/rfc6797
 package gosts
 
