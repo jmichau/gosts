@@ -25,20 +25,20 @@ type Info struct {
 	// MaxAge sets the duration (number of seconds) that the HSTS is valid for.
 	// This value can't be less than zero. This property is required
 	// cause of Expires that use MaxAge as a fallback if duration between now and Expires is less than zero.
-	MaxAge int `yaml:"MaxAge"`
+	MaxAge int `yaml:"MaxAge" json:"MaxAge"`
 
 	// Expires sets the date after which the header will not be valid.
 	// If this property is set the MaxAge property is not respected,
 	// but if duration between Expires and now is less than zero then MaxAge will be respected automatically.
-	Expires time.Time `yaml:"Expires"`
+	Expires time.Time `yaml:"Expires" json:"Expires"`
 
 	// IncludeSubDomains specifying that this HSTS Policy also applies to any hosts whose
 	// domain names are subdomains of the Known HSTS Host's domain name.
-	IncludeSubDomains bool `yaml:"IncludeSubDomains"`
+	IncludeSubDomains bool `yaml:"IncludeSubDomains" json:"IncludeSubDomains"`
 
 	// SendPreloadDirective sets whether the preload directive should be set. The directive allows browsers to
 	// confirm that the site should be added to a preload list. (see https://hstspreload.appspot.com/)
-	SendPreloadDirective bool `yaml:"SendPreloadDirective"`
+	SendPreloadDirective bool `yaml:"SendPreloadDirective" json:"SendPreloadDirective"`
 }
 
 // Configure HSTS middleware
