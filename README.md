@@ -62,6 +62,6 @@ Option | Type | Description
 
 
 ## TODO:
-- [ ] add json config support
+- [X] add json config support
 - [ ] add example that use yaml and/or json config
 - [ ] add tests
